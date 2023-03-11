@@ -18,14 +18,11 @@ const counter = createSlice({
     descrease(state) {
       state.count -= 1;
     },
-    increaseBy(state, action) {
+    update(state, action: { payload: number; type: string }) {
       state.count += action.payload;
-    },
-    descreaseBy(state, action) {
-      state.count -= action.payload;
     },
   },
 });
 
-export const { increase, descrease, increaseBy, descreaseBy } = counter.actions;
+export const { increase, descrease, update } = counter.actions;
 export default counter.reducer;
